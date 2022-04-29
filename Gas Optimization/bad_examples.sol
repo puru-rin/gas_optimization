@@ -60,3 +60,9 @@ contract BadLoops {
     return sum;
   }
 }
+
+contract ExterFuncB {
+    function test(uint[10] memory a) public pure returns(uint){
+         return a[9]*2;
+    }
+}

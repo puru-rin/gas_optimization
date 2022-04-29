@@ -65,3 +65,9 @@ contract GoodLoops {
     return sum;
   }
 }
+
+contract ExterFuncG {
+    function test2(uint[10] calldata a) external pure returns(uint){
+         return a[9]*2;
+    }
+}
