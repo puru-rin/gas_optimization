@@ -66,3 +66,19 @@ contract ExterFuncB {
          return a[9]*2;
     }
 }
+
+contract CryptoExchangeB {
+  struct Deposit {
+    uint256 _market;
+    address _sender;
+    uint256 _amount;
+    uint256 _time;
+  }
+
+  Deposit public depositInfo;
+  
+  function deposit(uint256 _amount, uint256 _market) external {
+    // perform deposit, update user’s balance, etc
+    depositInfo = Deposit(_market, msg.sender, _amount, block.timestamp);
+  }
+}

@@ -71,3 +71,12 @@ contract ExterFuncG {
          return a[9]*2;
     }
 }
+
+contract CryptoExchangeG {
+  event Deposit(uint256 _market, address _sender, uint256 _amount, uint256 _time);
+  
+  function deposit(uint256 _amount, uint256 _market) external {
+    // perform deposit, update user’s balance, etc
+    emit Deposit(_market, msg.sender, _amount, block.timestamp);
+  }
+}
