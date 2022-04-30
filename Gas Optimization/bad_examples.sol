@@ -80,5 +80,6 @@ contract CryptoExchangeB {
   function deposit(uint256 _amount, uint256 _market) external {
     // perform deposit, update user’s balance, etc
     depositInfo = Deposit(_market, msg.sender, _amount, block.timestamp);
+    // contract storage costs 20,000 gas per 32 bytes
   }
-}
+} //127178

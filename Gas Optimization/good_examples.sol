@@ -78,5 +78,7 @@ contract CryptoExchangeG {
   function deposit(uint256 _amount, uint256 _market) external {
     // perform deposit, update user’s balance, etc
     emit Deposit(_market, msg.sender, _amount, block.timestamp);
+    // logs: 8 gas per byte
+    // if the data we need is stored in an event emitted a long time ago, retrieving it can be too time consuming because of the number of blocks we need to search.
   }
-}
+}//27863
