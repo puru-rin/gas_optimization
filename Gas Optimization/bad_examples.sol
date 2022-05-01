@@ -83,3 +83,17 @@ contract CryptoExchangeB {
     // contract storage costs 20,000 gas per 32 bytes
   }
 } //127178
+
+contract IFB {
+  uint public data;
+
+  function callMe(uint a) public {
+    setData(a * 2);
+  }
+  
+  function setData(uint a) public {
+    data = a;
+    }
+}
+
+// when you call a public function, all the parameters are again copied into memory and passed to that function

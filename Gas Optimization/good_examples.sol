@@ -81,4 +81,18 @@ contract CryptoExchangeG {
     // logs: 8 gas per byte
     // if the data we need is stored in an event emitted a long time ago, retrieving it can be too time consuming because of the number of blocks we need to search.
   }
-}//27863
+}//2786
+
+contract IFG {
+  uint public data;
+
+  function callMe(uint a) public {
+    setData(a * 2);
+  }
+  
+  function setData(uint a) internal {
+    data = a;
+    }
+}
+
+// when you call an internal function, references of those parameters are passed and they are not copied into memory again
